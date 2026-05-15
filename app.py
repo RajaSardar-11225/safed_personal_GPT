@@ -25,13 +25,20 @@ def home():
         if not user_question:
             return render_template("index.html", chat_history=[])
 
-        # AI PROMPT
+        # AI PROMPT (Add rule #8)
         prompt = f"""
         You are a SQL query generator. Convert to ONLY a SQL Server SELECT query.
-        STRICT: No markdown, no explanation, no ```sql.
+        
+        STRICT RULES:
+        1. Return ONLY raw SQL query
+        ...
+        7. Only SELECT queries allowed
+        8. CRITICAL: If using AVG, SUM, or COUNT, ensure all non-aggregated columns are included in a GROUP BY clause.
+        
         Table: Daily_Packing_Data
         Columns: Serial_Number, Record_Number, Machine_No, Date_of_Packing, Time_of_Packing, Location, Machine, SKU, Weight_of_Bag, OPT_Name, Time_Stamp
-        Question: {user_question}
+        
+        User Question: {user_question}
         """
 
         try:
