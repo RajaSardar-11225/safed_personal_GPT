@@ -3,12 +3,12 @@ from groq import Groq
 from flask import Flask, render_template, request, redirect, url_for
 
 # DATABASE DETAILS
-server = 'sdplserver.database.windows.net'
-database = 'dme'
-user_name = 'dmeadmin'
-password = 'Agri@774Safe#14'
+server = 'myserver.database.windows.net'
+database = 'dkhhkhkmkjhuje'
+user_name = 'dwaaaaaaaqbjbjAWJJmin'
+password = 'AKHLGHCHGJCCJ54714'
 
-client = Groq(api_key="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")
+client = Groq(api_key="gsk_hkbgghfghjbkjokjhoihihgkiuhuiuu567876867ghjhK8m")
 
 app = Flask(__name__)
 
